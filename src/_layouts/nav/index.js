@@ -1,6 +1,7 @@
 import React from 'react';
 import { Stack, Button } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
+import { Home, Login, AdminPanelSettings } from '@mui/icons-material';
 
 const Nav = () => {
     const navigate = useNavigate()
@@ -20,7 +21,15 @@ const Nav = () => {
             >
                 <div style={{float:"left"}}>
                     <Stack spacing={2} direction="row">
-                        <Button variant="text" onClick={()=>navigate("/")}>Home</Button>
+                        <Button variant="text" onClick={()=>navigate("/")}><Home/></Button>
+                    </Stack>
+                </div>
+                <div style={{float:"right"}}>
+                    <Stack spacing={2} direction="row">
+                        <Button variant="text" onClick={()=>navigate("/login")}>
+                            <Login />
+                            {/* <AdminPanelSettings/> */}
+                        </Button>
                     </Stack>
                 </div>
             </div>
