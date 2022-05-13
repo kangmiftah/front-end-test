@@ -8,7 +8,8 @@ import {
     CardActionArea,
     CardActions,
     CardContent,
-    Button
+    Button,
+    Skeleton
 } from '@mui/material';
 import { getDetail, getComments } from '../../_actions';
 import { useParams } from 'react-router-dom';
@@ -37,13 +38,13 @@ export default function () {
                         }}>
 
                             <h3>{
-                                data.title
+                                loading ? <Skeleton height={50} width="100%" /> : data.title
                             }</h3>
 
                             <div>
                                 <p>
                                     {
-                                        data.body
+                                       loading ? <Skeleton height={50} width="100%" /> : data.body
                                     }
                                 </p>
                             </div>
@@ -59,9 +60,9 @@ export default function () {
                                         aria-controls="panel1a-content"
                                         id="panel1a-header"
                                     >
-                                        <Typography>
-                                            {`${coments.length} komentar`}
-                                        </Typography>
+                                        { commentsLoading ? <Skeleton height={50} width="100%" /> : <Typography>
+                                            { `${coments.length} komentar`}
+                                        </Typography>}
                                     </AccordionSummary>
                                     <AccordionDetails>
                                         {
