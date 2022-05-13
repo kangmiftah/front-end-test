@@ -14,5 +14,10 @@ export const routes = [
         isAdmin: false,
         component: Page.Home,
         exact: true
+    },{
+        key:"/post/:id",
+        isAdmin: false,
+        component: Page.Detail,
+        exact: true
     }
 ]
